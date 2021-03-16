@@ -15,6 +15,6 @@ const selectedData = [
   },
 ];
 
-const seedSelected = () => User.bulkCreate(selectedData);
+const seedSelected = () => Selected.bulkCreate(selectedData);
 
 module.exports = seedSelected;
