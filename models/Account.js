@@ -13,6 +13,15 @@ Account.init(
           primaryKey: true,
           autoIncrement: true,
         },
+        profilename:{
+          type: DataTypes.STRING,
+          allowNull:false,
+        },
+        team1:{
+          type: DataTypes.STRING,
+          allowNull:false,
+
+        }
 
     },
   {
