@@ -25,10 +25,22 @@ Activities:
         user team preferences
 
 Schedule:
+    **Update: all completed
     End of day Monday:
-    Be connected to api
-    Start working on models
-    Begin html/css
-    File structure completed
-    Repo created
-        Branches created etc.
+        Be connected to api
+        Start working on models
+        Begin html/css
+        File structure completed
+        Repo created
+            Branches created etc.
+    
+    End of day Tuesday:
+        Pulling data for API
+        Models done
+        Relationships and routes done
+        Skeleton of HTML done
+
+API needs:
+    From team feeds: team results, team schedule, standings
+    From match feeds: match summary, match timeline
+

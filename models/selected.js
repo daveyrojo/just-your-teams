@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+//may need to make a models for the sport, league, and team so user can have more than one team, league and sport to follow
+//or may need just a follow model that contains the the sports, leagues and teams, etc. need to review model structure
 
-class User extends Model {}
+class Selected extends Model {}
 
-User.init(
+Selected.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,28 +13,23 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    sport: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    league: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    about_me: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: false,
-    },
-    password: {
+    team: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [8],
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
       },
     },
   },
@@ -41,8 +38,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "selected",
   }
 );
 
-module.exports = User;
+module.exports = Selected;
