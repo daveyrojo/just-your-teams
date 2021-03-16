@@ -44,17 +44,26 @@ getSportsInfo();
 
 //17: Man city
 //https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:[insertnumber1+ here]/schedule.json?api_key=tjvrmmgbecfp8t6k4n7njuys
-["no team","Queens Park Rangers","Portsmouth FC","Wolverhampton Wanderers FC","Milton Keynes Dons","Bolton Wanderers","Burnley FC","Crystal Palace FC","West Bromwich Albion",
-"Birmingham City","Stockport County FC","Coventry City","Sheffield Wednesday","Rotherham United","Nottingham Forest","Sheffield United FC","?","Manchester City FC",]
-//not all premier league :/
 
-var teamkeys = {
-    "Crystal Palace FC": 7,
-    "West Bromwich Albion": 8,
-    "Manchester City FC": 17,
+var PLteamkeys = {
+    "Arsenal FC":42,
+    "Aston Villa FC":40,
     "Brighton & Hove Albion FC":30,
-    "Leicester City FC":31,
+    "Burnley FC":6,
     "Chelsea FC":38,
+    "Crystal Palace FC": 7,
+    "Everton FC":48,
+    "Fulham FC":43,
+    "Leeds United":34,
+    "Leicester City FC":31,
+    "Liverpool FC":44,
+    "Manchester City FC": 17,
+    "Manchester United FC":35,
     "Newcastle United FC":39,
-    "Everton FC":48
+    "Sheffield United FC":15,
+    "Southampton FC":45,
+    "Tottenham Hotspur FC":33,
+    "West Bromwich Albion": 8,
+    "West Ham United FC":37,
+    "Wolverhampton Wanderers FC":3,
 }
