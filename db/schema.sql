@@ -1,5 +1,3 @@
-
 DROP DATABASE IF EXISTS jyt_db;
-
 
 CREATE DATABASE jyt_db;
