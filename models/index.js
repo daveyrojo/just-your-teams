@@ -1,6 +1,16 @@
 const User = require('./User');
-const Aboutme = require('./Aboutme');
+const Selected = require('./Aboutme');
 
-Aboutme.belongsTo(User, {
+User.hasMany(Selected, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Selected.belongsTo(User, {
     foreignKey: 'user_id',
 });
+
+module.exports = {
+    User,
+    Selected,
+};

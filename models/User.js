@@ -23,11 +23,16 @@ User.init(
         isEmail: true,
       },
     },
+    about_me: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
+        len: [8],
       },
     },
   },

@@ -7,6 +7,12 @@ class Aboutme extends Model {}
 
 Aboutme.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     sport: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,11 +24,6 @@ Aboutme.init(
     team: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    about_me: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -37,8 +38,8 @@ Aboutme.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "aboutme",
+    modelName: "selected",
   }
 );
 
-module.exports = AboutMe;
+module.exports = Selected;
