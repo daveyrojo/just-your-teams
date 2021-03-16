@@ -1,5 +1,5 @@
 const User = require('./User');
-const Selected = require('./Aboutme');
+const Selected = require('./selected');
 
 User.hasMany(Selected, {
     foreignKey: 'user_id',

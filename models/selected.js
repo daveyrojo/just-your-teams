@@ -3,9 +3,9 @@ const sequelize = require("../config/connection");
 //may need to make a models for the sport, league, and team so user can have more than one team, league and sport to follow
 //or may need just a follow model that contains the the sports, leagues and teams, etc. need to review model structure
 
-class Aboutme extends Model {}
+class Selected extends Model {}
 
-Aboutme.init(
+Selected.init(
   {
     id: {
       type: DataTypes.INTEGER,
