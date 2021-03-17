@@ -1,10 +1,10 @@
 const router = require("express").Router();
 
-const userRoutes = require('./user-routes');
+const userRoutes = require('./user-routes.js');
 const selectedRoutes = require('./selected-routes');
-const { route } = require("..");
+// const { route } = require("..");
 
-route.use('/user', userRoutes);
-route.use('/selected', selectedRoutes);
+router.use('/user', userRoutes);
+router.use('/selected', selectedRoutes);
 
 module.exports = router;
