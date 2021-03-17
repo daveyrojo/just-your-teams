@@ -58,7 +58,7 @@ function getSportsInfo(){
 
 function getSchedule(name){ //next game is data.schedule[0], data.schedule[0].competitors[0].qualifier gives home/away
     var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/schedule.json?api_key=${your_api_key}`
-    console.log(query)
+    //console.log(query)
     fetch(query)
         .then(function (response) {
         // console.log(response);
@@ -66,10 +66,23 @@ function getSchedule(name){ //next game is data.schedule[0], data.schedule[0].co
         })
         .then(function (data) {
             console.log(data.team.name);
-            console.log(data.schedule[0].competitors[0], " ",data.schedule[0].competitors[1] )
+            //console.log(data.schedule[0])
             //did we get it
             
-            return data;
+            var allGames = [];
+            for(var i=0;i<5;i++){
+                var gameData = [{},{},{}]
+                var res = data.schedule[i];
+                gameData[0]["name"] = res.competitors[0].name;
+                gameData[0]["role"] = "home";
+                gameData[1]["name"] = res.competitors[1].name;
+                gameData[1]["role"] = "away";
+                gameData[2]["date"] = res.scheduled;
+                gameData[2]["season"] = res.season.name;
+                allGames.push(gameData);
+            }
+            console.log(allGames)
+            return allGames;
         })
 }
 function getResults(name){ //most recent game is data.results[0]
@@ -81,17 +94,30 @@ function getResults(name){ //most recent game is data.results[0]
         })
         .then(function (data) {
             console.log(data.team.name);
-            console.log(data.results[0].sport_event.competitors[0])
+            //console.log(data.results[0])
             //did we get it
-            return data;
+            var allGames = [];
+            for(var i=0;i<5;i++){
+                var gameData = [{},{},{}]
+                var res = data.results[i];
+                gameData[0]["name"] = res.sport_event.competitors[0].name;
+                gameData[0]["role"] = "home";
+                gameData[0]["score"] = res.sport_event_status.home_score;
+                gameData[1]["name"] = res.sport_event.competitors[1].name;
+                gameData[1]["role"] = "away";
+                gameData[1]["score"] = res.sport_event_status.away_score;
+                gameData[2]["date"] = res.sport_event.scheduled;
+                gameData[2]["season"] = res.sport_event.season.name;
+                allGames.push(gameData);
+            }
+            console.log(allGames)
+            return allGames;
         })
     
 }
 
-getSchedule("Chelsea FC");
+//getSchedule("Chelsea FC");
 //getResults("Chelsea FC");
-
-//getSportsInfo();
 
 
 //HTML routes first
@@ -104,3 +130,6 @@ getSchedule("Chelsea FC");
 //https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:[insertnumber1+ here]/schedule.json?api_key=tjvrmmgbecfp8t6k4n7njuys
 
 
+
+//team names, home/away, scores for results
+//date, league
