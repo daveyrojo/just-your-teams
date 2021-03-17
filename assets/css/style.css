@@ -2,18 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 .showcase {
-  position: absolute;
-  right: 0;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 2;
   background: #111;
   color: #fff;
 }
@@ -40,5 +34,5 @@
   padding: 1rem;
   border-radius: 0;
   z-index: 10;
-  margin: auto;
 }
+
