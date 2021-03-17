@@ -35,4 +35,10 @@
   mix-blend-mode: overlay;
 }
 
-
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 0;
+  z-index: 10;
+  align-items: center;
+}
