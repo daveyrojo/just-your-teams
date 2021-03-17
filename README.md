@@ -58,6 +58,9 @@ Schedule:
             James will simply have a hardcoded API fetch that can produce a team and their basic info on user page
                 - Then if James can help integrate front and backend/review Dave and Mike's work
 
+Navigating to DB in heroku:
+    Lecture 3/16 21 minute mark
+
 API needs:
     From team feeds: team results, team schedule, standings
     From match feeds: match summary, match timeline
