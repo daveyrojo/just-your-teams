@@ -35,10 +35,28 @@ Schedule:
             Branches created etc.
     
     End of day Tuesday:
+    ** Routes not done due to User auth being introduced
         Pulling data for API
         Models done
         Relationships and routes done
         Skeleton of HTML done
+    
+    End of day Wednesday:
+        Have a deployable site
+            - simple html 
+            - accept user credentials
+            - produce ANY API data
+        
+        Plan:
+            Dave and Mike will work on user auth
+                - Building out routes for both front and backend are main focus
+                - User password in User model needs:
+                    BCRYPT
+                    Hooks
+            Jelani simply needs a log in button that accepts user credential creation
+                - Aim to also accept user input for already created credentials
+            James will simply have a hardcoded API fetch that can produce a team and their basic info on user page
+                - Then if James can help integrate front and backend/review Dave and Mike's work
 
 API needs:
     From team feeds: team results, team schedule, standings
