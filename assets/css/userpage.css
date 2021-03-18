@@ -130,6 +130,9 @@
 .social-footer {
   padding: 1rem;
   background: #2c3840;
+  position: relative;
+  bottom: 0;
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
