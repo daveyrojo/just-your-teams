@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just-Your-Teams search page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/userpage.css" />
+  </head>
+  <body>
+    <section>
+      <div>
+        <nav class="top-bar topbar-responsive">
+          <div id="topbar-responsive" class="topbar-responsive-links">
+            <div class="top-bar-right">
+              <ul class="menu simple vertical medium-horizontal">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                  <button
+                    type="button"
+                    class="button hollow topbar-responsive-button"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <br>
+    <section>
+        <div>
+            <div class="translucent-form-overlay">
+                <form>
+                  <h3>Search for Teams</h3>
+                  <div class="row columns">
+                    <label>Keyword
+                      <input type="text" name="keyword" placeholder="Any">
+                    </label>
+                  </div>
+                  <div class="row columns">
+                    <label>Property Status
+                      <select name="status" type="text">
+                        <option>Any</option>
+                        <option value="rent">Rent</option>
+                        <option value="buy">Buy</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="row columns">
+                    <label>Property Type
+                      <select name="status" type="text">
+                        <option>Any</option>
+                        <option value="office">Office</option>
+                        <option value="building">Building</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="row columns">
+                    <label>Location
+                      <input type="text" name="location" placeholder="Any">
+                    </label>
+                  </div>
+                  <div class="row">
+                    <label class="columns small-12">Price</label>
+                    <div class="columns small-6">
+                      <input type="number" min="0" name="min" placeholder="Min">
+                    </div>
+                    <div class="columns small-6">
+                      <input type="number" min="0" name="max" placeholder="Max">
+                    </div>
+                  </div>
+                  <button type="button" class="primary button expanded search-button">
+                    Search
+                  </button>
+               </form>
+              </div> 
+        </div>         
+    </section>
+    <br>
+    <section>
+      <div>
+        <footer class="social-footer">
+            <div class="social-footer-left">
+              <a href="#"><img class="logo" src="https://placehold.it/150x30"></a>
+            </div>
+            <div class="social-footer-icons">
+              <ul class="menu simple">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </footer>          
+      </div>
+    </section>
+  </body>
+</html>
