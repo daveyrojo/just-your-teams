@@ -17,9 +17,9 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
+  // store: new SequelizeStore({
+  //   db: sequelize,
+  // }),
 };
 
 app.use(session(sess));
@@ -27,7 +27,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "assets")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
