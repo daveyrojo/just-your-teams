@@ -1,9 +1,9 @@
 const loginFormHandler = async function(event) {
   event.preventDefault();
-
+    console.log("loginFormHandler");
   const usernameEl = document.querySelector('#username-input-login');
   const passwordEl = document.querySelector('#password-input-login');
-
+//unsure what /api/user/login is refering to?
   const response = await fetch('/api/user/login', {
     method: 'POST',
     body: JSON.stringify({
@@ -14,7 +14,7 @@ const loginFormHandler = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/user');
   } else {
     alert('Failed to login');
   }
