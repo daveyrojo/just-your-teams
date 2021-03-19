@@ -120,16 +120,7 @@ function getResults(name){ //most recent game is data.results[0]
 //getResults("Chelsea FC");
 
 
-//HTML routes first
-//router.get
-//after landing page
-//email to authenticate?
-//uniqueness
-
-//17: Man city
-//https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:[insertnumber1+ here]/schedule.json?api_key=tjvrmmgbecfp8t6k4n7njuys
-
-
 
 //team names, home/away, scores for results
 //date, league
+module.exports = {getSchedule,getResults}
