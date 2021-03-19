@@ -4,13 +4,13 @@ const selectedData = [
   {
     sport: "Soccer",
     league: "English Premier League",
-    team: "Everton",
+    team: "Everton FC",
     user_id: 1,
   },
   {
     sport: "Soccer",
     league: "English Premier League",
-    team: "Manchester United",
+    team: "Manchester United FC",
     user_id: 2,
   },
 ];
