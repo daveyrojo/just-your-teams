@@ -24,35 +24,41 @@ router.post('/', async (req, res) => {
 });
 
 
-//URL: /api/user/
+//URL: /api/user/login
 router.post('/login', async (req, res) => {
+  console.log("POST /api/user/login");
   try {
     const user = await User.findOne({
       where: {
         username: req.body.username,
       },
     });
+    console.log('user: ', JSON.stringify(user));
+
 
     if (!user) {
       res.status(400).json({ message: 'No user account found!' });
       return;
     }
-
+    console.log('Verifying PASSWORD!!!...')
     const validPassword = user.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res.status(400).json({ message: 'No user account found!' });
-      return;
-    }
+    // if (!validPassword) {
+    //   console.log('VALID PASSWORD: ', validPassword);
+    //   res.status(400).json({ message: 'No user account found!' });
+    //   return;
+    // }
+    // console.log('Password is valid');
 
     req.session.save(() => {
         req.session.userId = user.id,
         req.session.username = user.username,
         req.session.loggedIn = true,
-
+          console.log('Sending JSON data back');
       res.json({ user, message: 'You are now logged in!' });
     });
   } catch (err) {
+    console.log(err);
     res.status(400).json({ message: 'No user account found!' });
   }
 });

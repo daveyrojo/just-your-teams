@@ -35,40 +35,18 @@ var PLteamkeys = {
     "West Ham United FC":37,
     "Wolverhampton Wanderers FC":3,
 }
-/*
-function getSportsInfo(){
-    //var query = `https://api.sportradar.us/soccer-${access_level}${version}/${league_group}/${language_code}/schedules/${year}-${month}-${day}/results.${format}?api_key=${your_api_key}`
-    for(var i=0;i<30;i++){
-        var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${i}/schedule.json?api_key=${your_api_key}`
-    console.log(query)
-    fetch(query)
-        .then(function (response) {
-        // console.log(response);
-        return response.json();
-        })
-        .then(function (data) {
-            console.log(data.team.name," ",i);
-            //did we get it
-        })
-    }
-    
 
 
-}*/
-
-function getSchedule(name){ //next game is data.schedule[0], data.schedule[0].competitors[0].qualifier gives home/away
+function getSchedule(name){ //returns next 5 games, who's home, who's away
     var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/schedule.json?api_key=${your_api_key}`
-    //console.log(query)
+    
     fetch(query)
         .then(function (response) {
-        // console.log(response);
         return response.json();
         })
         .then(function (data) {
             console.log(data.team.name);
-            //console.log(data.schedule[0])
-            //did we get it
-            
+            //get next 5 games
             var allGames = [];
             for(var i=0;i<5;i++){
                 var gameData = [{},{},{}]
@@ -85,24 +63,21 @@ function getSchedule(name){ //next game is data.schedule[0], data.schedule[0].co
             return allGames;
         })
 }
-function getResults(name){ //most recent game is data.results[0]
+function getResults(name){ //returns list of 5 most recent games
     var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/results.json?api_key=${your_api_key}`
     fetch(query)
         .then(function (response) {
-        // console.log(response);
         return response.json();
         })
         .then(function (data) {
             console.log(data.team.name);
-            //console.log(data.results[0])
-            //did we get it
             var allGames = [];
             for(var i=0;i<5;i++){
                 var gameData = [{},{},{}]
                 var res = data.results[i];
                 gameData[0]["name"] = res.sport_event.competitors[0].name;
                 gameData[0]["role"] = "home";
-                gameData[0]["score"] = res.sport_event_status.home_score;
+                gameData[0]["score"] = res.sport_event_status.home_score; //home team given first
                 gameData[1]["name"] = res.sport_event.competitors[1].name;
                 gameData[1]["role"] = "away";
                 gameData[1]["score"] = res.sport_event_status.away_score;
@@ -115,11 +90,6 @@ function getResults(name){ //most recent game is data.results[0]
         })
     
 }
-
-//getSchedule("Chelsea FC");
-//getResults("Chelsea FC");
-
-
 
 //team names, home/away, scores for results
 //date, league
