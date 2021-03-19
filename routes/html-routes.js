@@ -1,10 +1,5 @@
 const path = require("path");
 const router = require("express").Router();
-<<<<<<< HEAD
-
-//every route needs to go ahead of app.get('*') or else it /// won't work
-=======
->>>>>>> 096222fd64cbf99281d857a3c1c3a110aa8d1c5f
 
 router.get("/create-acc", (req, res) => {
   console.log("GET /create-acc");
