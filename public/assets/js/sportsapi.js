@@ -1,6 +1,6 @@
 //include moment
-const moment = require('moment');  
-const fetch = require("node-fetch");
+//const moment = require('moment');  
+//const fetch = require("node-fetch");
 
 const access_level = 't'
 const version = 3
@@ -10,35 +10,39 @@ var day = moment().format("DD");
 var month = moment().format("MM");
 var year = moment().format("YYYY")
 const format="json"
-const your_api_key = "tjvrmmgbecfp8t6k4n7njuys"
+var your_api_key 
 
-
-var PLteamkeys = {
-    "Arsenal FC":42,
-    "Aston Villa FC":40,
-    "Brighton & Hove Albion FC":30,
-    "Burnley FC":6,
-    "Chelsea FC":38,
-    "Crystal Palace FC": 7,
-    "Everton FC":48,
-    "Fulham FC":43,
-    "Leeds United":34,
-    "Leicester City FC":31,
-    "Liverpool FC":44,
-    "Manchester City FC": 17,
-    "Manchester United FC":35,
-    "Newcastle United FC":39,
-    "Sheffield United FC":15,
-    "Southampton FC":45,
-    "Tottenham Hotspur FC":33,
-    "West Bromwich Albion": 8,
-    "West Ham United FC":37,
-    "Wolverhampton Wanderers FC":3,
-}
+var PLteamkeys;
 
 
 function getSchedule(name){ //returns next 5 games, who's home, who's away
-    var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/schedule.json?api_key=${your_api_key}`
+    PLteamkeys  = {
+        "Arsenal FC":42,
+        "Aston Villa FC":40,
+        "Brighton & Hove Albion FC":30,
+        "Burnley FC":6,
+        "Chelsea FC":38,
+        "Crystal Palace FC": 7,
+        "Everton FC":48,
+        "Fulham FC":43,
+        "Leeds United":34,
+        "Leicester City FC":31,
+        "Liverpool FC":44,
+        "Manchester City FC": 17,
+        "Manchester United FC":35,
+        "Newcastle United FC":39,
+        "Sheffield United FC":15,
+        "Southampton FC":45,
+        "Tottenham Hotspur FC":33,
+        "West Bromwich Albion": 8,
+        "West Ham United FC":37,
+        "Wolverhampton Wanderers FC":3,
+    }
+    your_api_key = "tjvrmmgbecfp8t6k4n7njuys"
+    console.log(name)
+    console.log(PLteamkeys)
+    var id = PLteamkeys[name]
+    var query = `https://cors-anywhere.herokuapp.com/https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${id}/schedule.json?api_key=${your_api_key}`
     
     fetch(query)
         .then(function (response) {
@@ -59,12 +63,12 @@ function getSchedule(name){ //returns next 5 games, who's home, who's away
                 gameData[2]["season"] = res.season.name;
                 allGames.push(gameData);
             }
-            console.log(allGames)
+            console.log("Schedule", allGames)
             return allGames;
         })
 }
 function getResults(name){ //returns list of 5 most recent games
-    var query = `https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/results.json?api_key=${your_api_key}`
+    var query = `https://cors-anywhere.herokuapp.com/https://api.sportradar.us/soccer-t3/eu/en/teams/sr:competitor:${PLteamkeys[name]}/results.json?api_key=${your_api_key}`
     fetch(query)
         .then(function (response) {
         return response.json();
@@ -85,7 +89,7 @@ function getResults(name){ //returns list of 5 most recent games
                 gameData[2]["season"] = res.sport_event.season.name;
                 allGames.push(gameData);
             }
-            console.log(allGames)
+            console.log("results ", allGames)
             return allGames;
         })
     
@@ -93,4 +97,4 @@ function getResults(name){ //returns list of 5 most recent games
 
 //team names, home/away, scores for results
 //date, league
-module.exports = {getSchedule,getResults}
+//module.exports = {getSchedule,getResults}
