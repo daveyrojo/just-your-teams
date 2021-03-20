@@ -6,9 +6,6 @@ const access_level = 't'
 const version = 3
 var league_group = 'eu'
 var language_code = 'en'
-var day = moment().format("DD");
-var month = moment().format("MM");
-var year = moment().format("YYYY")
 const format="json"
 var your_api_key 
 
