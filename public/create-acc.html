@@ -42,9 +42,9 @@
                 <h4>Register for an account</h4>
                 <div class="input-group">
                   <span class="input-group-label">
-                    <i class="fa fa-id-card"></i>
+                    <i class="fa fa-envelope-o"></i>
                   </span>
-                  <input
+                  <input id="email-input"
                     class="input-group-field"
                     type="text"
                     placeholder="Email"
@@ -54,7 +54,9 @@
                   <span class="input-group-label">
                     <i class="fa fa-user"></i>
                   </span>
-                  <input 
+
+                  <input id="username-input"
+
                     class="input-group-field"
                     type="text"
                     placeholder="Username"
@@ -64,9 +66,11 @@
                   <span class="input-group-label">
                     <i class="fa fa-key"></i>
                   </span>
-                  <input 
+
+                  <input id="password-input"
+
                     class="input-group-field"
-                    type="text"
+                    type="password"
                     placeholder="Password"
                   />
                 </div>
@@ -78,7 +82,7 @@
                   <div class="row columns">
                     <label
                       >Sport
-                      <select name="status" type="text">
+                      <select id="sport-input" name="status" type="text">
                         <option value="soccer">Soccer</option>
                       </select>
                     </label>
@@ -86,7 +90,7 @@
                   <div class="row columns">
                     <label
                       >League
-                      <select name="status" type="text">
+                      <select id="league-input" name="status" type="text">
                         <option value="epl">English Premier League</option>
                       </select>
                     </label>
@@ -94,7 +98,7 @@
                   <div class="row columns">
                     <label
                       >Teams
-                      <select name="status" type="text">
+                      <select id="teams-input" name="status" type="text">
                         <option value="arsenal">Arsenal FC</option>
                         <option value="aston-villa">Aston Villa FC</option>
                         <option value="brighton">
