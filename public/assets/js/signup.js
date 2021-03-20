@@ -28,6 +28,15 @@ const signupFormHandler = async function(event) {
   } else {
     alert('Failed to sign up');
   }
+
+  const preferences = await fetch('/api/selected', {
+    method: 'POST',
+    body: JSON.stringify({
+      sport: sportEl.value,
+      leage: leagueEl.value,
+      team: teamEl.value
+    })
+  })
 };
 
 document
