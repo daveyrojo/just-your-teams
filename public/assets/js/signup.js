@@ -2,15 +2,15 @@ const signupFormHandler = async function(event) {
   event.preventDefault();
 
   //user model elements
-  const usernameEl = document.querySelector('#username-input-signup');
-  const passwordEl = document.querySelector('#password-input-signup');
-  const emailEl = document.querySelector('#email-input-signup');
-  const aboutmeEl = document.querySelector('#aboutme-input-signup');
+  const usernameEl = document.querySelector('#username-input');
+  const passwordEl = document.querySelector('#password-input');
+  const emailEl = document.querySelector('#email-input');
+  const aboutmeEl = document.querySelector('#aboutme-input');
 
   //sport, league, team elements
-  const sportEl = document.querySelector('#sport-input-signup');
-  const leagueEl = document.querySelector('#league-input-signup');
-  const teamEl = docuent.querySelector('#team-input-signup');
+  const sportEl = document.querySelector('#sport-input');
+  const leagueEl = document.querySelector('#league-input');
+  const teamEl = docuent.querySelector('#teams-input');
 
   const response = await fetch('/api/user', {
     method: 'POST',
