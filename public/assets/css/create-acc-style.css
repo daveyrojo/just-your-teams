@@ -189,7 +189,7 @@ form .form-icons .fa {
 .social-footer {
   padding: 1rem;
   background: #2c3840;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   display: -webkit-flex;

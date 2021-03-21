@@ -1,4 +1,4 @@
-/* Settings for user page and search page */
+/* Settings for navigation bar*/
 .topbar-responsive {
   background: #2c3840;
   padding: 1rem 1.5rem;
@@ -127,42 +127,10 @@
   }
 }
 
-.social-footer {
-  padding: 1rem;
-  background: #2c3840;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.social-footer .social-footer-icons li:last-of-type {
-  margin-right: 0;
-}
-
-.social-footer .social-footer-icons .fa {
-  font-size: 1.3rem;
-  color: #fefefe;
-}
-
-.social-footer .social-footer-icons .fa:hover {
-  color: #4a4a4a;
-  transition: color 0.3s ease-in;
-}
-
-/* Settings for search pages form */
-
+/* Search for teams form */
 .translucent-form-overlay {
-  max-width: 500px;
-  width: 100%;
+  /* max-width: 500px; */
+  width: 80%;
   background-color: rgba(54, 54, 54, 0.8);
   padding: 20px;
   color: #fefefe;
@@ -194,11 +162,11 @@
   color: #8a8a8a;
 }
 
-/* Initial about me */
+/* About me */
 .status-update-input-box {
   background-color: #fefefe;
-  padding: 1rem;
-  width: 60%;
+  padding: 20px;
+  width: 80%;
   border: 1px solid #cacaca;
   box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18),
     0 0.125rem 2px rgba(0, 0, 0, 0.36);
@@ -305,4 +273,35 @@
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
+}
+
+.social-footer {
+  padding: 1rem;
+  background: #2c3840;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.social-footer .social-footer-icons li:last-of-type {
+  margin-right: 0;
+}
+
+.social-footer .social-footer-icons .fa {
+  font-size: 1.3rem;
+  color: #fefefe;
+}
+
+.social-footer .social-footer-icons .fa:hover {
+  color: #4a4a4a;
+  transition: color 0.3s ease-in;
 }
