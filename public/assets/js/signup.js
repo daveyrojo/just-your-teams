@@ -6,11 +6,6 @@ const signupFormHandler = async function(event) {
   const passwordEl = document.querySelector('#password-input');
   const emailEl = document.querySelector('#email-input');
 
-  //sport, league, team elements
-  const sportEl = document.querySelector('#sport-input');
-  const leagueEl = document.querySelector('#league-input');
-  const teamEl = document.querySelector('#teams-input');
-
   const response = await fetch('/api/user', {
     method: 'POST',
     body: JSON.stringify({
@@ -28,16 +23,15 @@ const signupFormHandler = async function(event) {
     alert('Failed to sign up');
   }
 
-  const preferences = await fetch('/api/selected', {
-    method: 'POST',
-    body: JSON.stringify({
-      sport: sportEl.value,
-      leage: leagueEl.value,
-      team: teamEl.value
-    })
-  })
+  
 };
 
 document
   .querySelector('#sign-up-form')
   .addEventListener('submit', signupFormHandler);
+
+
+  // //sport, league, team elements - saved from when we were tryig to create two modelswith one function.
+  // const sportEl = document.querySelector('#sport-input');
+  // const leagueEl = document.querySelector('#league-input');
+  // const teamEl = document.querySelector('#teams-input');
