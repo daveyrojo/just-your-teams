@@ -33,6 +33,18 @@ User.init(
       allowNull: true,
       unique: false,
     },
+    sport: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    league: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    team: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

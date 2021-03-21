@@ -10,6 +10,9 @@ router.post('/', async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         about_me: req.body.about_me,
+        sport: req.body.sport,
+        league: req.body.league,
+        team: req.body.team,
         password: req.body.password
     });
 
