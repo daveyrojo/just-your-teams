@@ -13,8 +13,14 @@ const loginFormHandler = async function(event) {
     headers: { 'Content-Type': 'application/json' },
   });
 
+  console.log('Incoming Data');
+  console.log(JSON.stringify(response));
+  console.log('Above is line 15');gi
+
+  // const id = await fetch('/api/user')
+
   if (response.ok) {
-    document.location.replace('/user');
+    // document.location.replace(`/user/${response.id}`);
   } else {
     alert('Failed to login');
   }

@@ -28,7 +28,18 @@ router.post('/', async (req, res) => {
   }
 });
 
-
+router.put('/:id', async( req,res) => {
+  // URL: /api/user/:id
+  console.log('PUT: user/:id');
+  try {
+    const aboutme = await User.update({
+      about_me: req.body.about_me
+    });
+    res.status(200).json(aboutme);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //URL: /api/user/login
 router.post('/login', async (req, res) => {
   console.log("POST /api/user/login");

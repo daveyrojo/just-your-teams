@@ -6,7 +6,7 @@ router.get("/create-acc", (req, res) => {
  res.sendFile(path.join(__dirname, "../public/create-acc.html"));   
 });
 
-router.get("/user", (req, res) => {
+router.get("/user/:id", (req, res) => {
   console.log("GET /user");
   res.sendFile(path.join(__dirname, "../public/userpage.html"));
 });

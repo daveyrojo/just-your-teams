@@ -33,6 +33,8 @@ document
   .querySelector("#sign-up-form")
   .addEventListener("submit", sportTeamLeagueSelect);
 
+
+//update the about me
 const updateAboutMe = async function (event) {
   event.preventDefault();
   const aboutme = document.querySelector('#aboutme');
