@@ -22,20 +22,23 @@ const signupFormHandler = async function(event) {
     headers: { 'Content-Type': 'application/json' },
   });
 
+  // const preferences = await fetch("/api/selected", {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     sport: sportEl.value,
+  //     leage: leagueEl.value,
+  //     team: teamEl.value,
+  //   }),
+  //   headers: { "Content-Type": "application.json" },
+  // });
+
   if (response.ok) {
     document.location.replace('/user');
   } else {
     alert('Failed to sign up');
   }
 
-  const preferences = await fetch('/api/selected', {
-    method: 'POST',
-    body: JSON.stringify({
-      sport: sportEl.value,
-      leage: leagueEl.value,
-      team: teamEl.value
-    })
-  })
+  
 };
 
 document
