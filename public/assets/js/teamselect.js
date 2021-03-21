@@ -29,7 +29,32 @@ const sportTeamLeagueSelect = async function (event) {
   console.log(teamEl.value);
 };
 
-
 document
   .querySelector("#sign-up-form")
   .addEventListener("submit", sportTeamLeagueSelect);
+
+const updateAboutMe = async function (event) {
+  event.preventDefault();
+  const aboutme = document.querySelector('#aboutme');
+
+  const response = await fetch(`/api/user/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      about_me: aboutme.value,
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  console.log(aboutme.value);
+
+  if (response.ok) {
+    document.location.replace("/user");
+  } else {
+    alert("Failed to update about me.");
+  }
+}
+
+document
+  .querySelector("#about-me-button")
+  .addEventListener("submit", updateAboutMe);
