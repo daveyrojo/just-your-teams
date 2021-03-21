@@ -19,6 +19,6 @@
 //   if (response.ok) {
 //     document.location.replace("/user");
 //   } else {
-//     alert("Failed to sign up");
+//     alert("Failed to update sport, team, or league.");
 //   }
 // };

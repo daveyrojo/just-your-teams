@@ -45,12 +45,12 @@ router.post('/login', async (req, res) => {
     console.log('Verifying PASSWORD!!!...')
     const validPassword = user.checkPassword(req.body.password);
 
-    // if (!validPassword) {
-    //   console.log('VALID PASSWORD: ', validPassword);
-    //   res.status(400).json({ message: 'No user account found!' });
-    //   return;
-    // }
-    // console.log('Password is valid');
+    if (!validPassword) {
+      console.log('VALID PASSWORD: ', validPassword);
+      res.status(400).json({ message: 'No user account found!' });
+      return;
+    }
+    console.log('Password is valid');
 
     req.session.save(() => {
         req.session.userId = user.id,
