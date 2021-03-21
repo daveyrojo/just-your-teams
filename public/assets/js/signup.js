@@ -10,7 +10,7 @@ const signupFormHandler = async function(event) {
   //sport, league, team elements
   const sportEl = document.querySelector('#sport-input-signup');
   const leagueEl = document.querySelector('#league-input-signup');
-  const teamEl = docuent.querySelector('#team-input-signup');
+  const teamEl = document.querySelector('#team-input-signup');
 
   const response = await fetch('/api/user', {
     method: 'POST',
@@ -31,5 +31,5 @@ const signupFormHandler = async function(event) {
 };
 
 document
-  .querySelector('#signup-form')
+  .querySelector('#sign-up-form')
   .addEventListener('submit', signupFormHandler);

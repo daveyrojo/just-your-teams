@@ -44,7 +44,8 @@
                   <span class="input-group-label">
                     <i class="fa fa-envelope-o"></i>
                   </span>
-                  <input id="email-input"
+                  <input
+                    id="email-input"
                     class="input-group-field"
                     type="text"
                     placeholder="Email"
@@ -54,7 +55,8 @@
                   <span class="input-group-label">
                     <i class="fa fa-user"></i>
                   </span>
-                  <input id="username-input"
+                  <input
+                    id="username-input"
                     class="input-group-field"
                     type="text"
                     placeholder="Username"
@@ -64,86 +66,74 @@
                   <span class="input-group-label">
                     <i class="fa fa-key"></i>
                   </span>
-                  <input id="password-input"
+                  <input
+                    id="password-input"
                     class="input-group-field"
                     type="password"
                     placeholder="Password"
                   />
                 </div>
               </div>
-              <div class="translucent-form-overlay">
-                <form id="select-team-form">
-                  <h3>Search for Teams</h3>
-                  <div class="row columns"></div>
-                  <div class="row columns">
-                    <label
-                      >Sport
-                      <select id="sport-input" name="status" type="text">
-                        <option value="soccer">Soccer</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="row columns">
-                    <label
-                      >League
-                      <select id="league-input" name="status" type="text">
-                        <option value="epl">English Premier League</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="row columns">
-                    <label
-                      >Teams
-                      <select id="teams-input" name="status" type="text">
-                        <option value="arsenal">Arsenal FC</option>
-                        <option value="aston-villa">Aston Villa FC</option>
-                        <option value="brighton">
-                          Brighton & Hove Albion FC
-                        </option>
-                        <option value="burnley">Burnley FC</option>
-                        <option value="chelsea">Chelsea FC</option>
-                        <option value="crystal-palace">Crystal Palace FC</option>
-                        <option value="everton">Everton FC</option>
-                        <option value="fulham">Fulham FC</option>
-                        <option value="leeds-united">Leeds United</option>
-                        <option value="leicester-city">Leicester City</option>
-                        <option value="liverpool">Liverpool FC</option>
-                        <option value="manchester-city">
-                          Manchester City FC
-                        </option>
-                        <option value="manchester-united">
-                          Manchester United FC
-                        </option>
-                        <option value="newcastle-united">
-                          Newcastle United FC
-                        </option>
-                        <option value="sheffield-united">
-                          Sheffield United FC
-                        </option>
-                        <option value="southampton">Southampton FC</option>
-                        <option value="tottenham-hotspur">
-                          Tottenham Hotspur
-                        </option>
-                        <option value="west-bromwich-albion">
-                          West Bromwich Albion
-                        </option>
-                        <option value="west-ham-united">
-                          West Ham United FC
-                        </option>
-                        <option value="wolverhampton-wanderers">
-                          Wolverhampton Wanderers
-                        </option>
-                      </select>
-                    </label>
-                  </div>
-                  <button
-                    type="button"
-                    class="primary button expanded search-button"
-                  >
-                    Submit
-                  </button>
-                </form>
+              <!-- <div class="translucent-form-overlay"> -->
+              <!-- <form id="select-team-form"> -->
+              <h3>Search for Teams</h3>
+              <div class="row columns"></div>
+              <div class="row columns">
+                <label
+                  >Sport
+                  <select id="sport-input" name="status" type="text">
+                    <option value="soccer">Soccer</option>
+                  </select>
+                </label>
               </div>
+              <div class="row columns">
+                <label
+                  >League
+                  <select id="league-input" name="status" type="text">
+                    <option value="epl">English Premier League</option>
+                  </select>
+                </label>
+              </div>
+              <div class="row columns">
+                <label
+                  >Teams
+                  <select id="teams-input" name="status" type="text">
+                    <option value="arsenal">Arsenal FC</option>
+                    <option value="aston-villa">Aston Villa FC</option>
+                    <option value="brighton">Brighton & Hove Albion FC</option>
+                    <option value="burnley">Burnley FC</option>
+                    <option value="chelsea">Chelsea FC</option>
+                    <option value="crystal-palace">Crystal Palace FC</option>
+                    <option value="everton">Everton FC</option>
+                    <option value="fulham">Fulham FC</option>
+                    <option value="leeds-united">Leeds United</option>
+                    <option value="leicester-city">Leicester City</option>
+                    <option value="liverpool">Liverpool FC</option>
+                    <option value="manchester-city">Manchester City FC</option>
+                    <option value="manchester-united">
+                      Manchester United FC
+                    </option>
+                    <option value="newcastle-united">
+                      Newcastle United FC
+                    </option>
+                    <option value="sheffield-united">
+                      Sheffield United FC
+                    </option>
+                    <option value="southampton">Southampton FC</option>
+                    <option value="tottenham-hotspur">Tottenham Hotspur</option>
+                    <option value="west-bromwich-albion">
+                      West Bromwich Albion
+                    </option>
+                    <option value="west-ham-united">West Ham United FC</option>
+                    <option value="wolverhampton-wanderers">
+                      Wolverhampton Wanderers
+                    </option>
+                  </select>
+                </label>
+              </div>
+              <!-- </form> -->
+              <!-- </div> -->
+              <button class="button expanded">Submit</button>
             </form>
           </div>
         </div>
@@ -152,14 +142,30 @@
     <br />
     <footer class="social-footer">
       <div class="social-footer-left">
-        <a href="#"><img class="logo" src=""></a>
+        <a href="#"><img class="logo" src="" /></a>
       </div>
       <div class="social-footer-icons">
         <ul class="menu simple">
-          <li><a href="https://www.facebook.com/"><i class="" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.instagram.com/?hl=en"><i class="" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.pinterest.com/"><i class="" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/?lang=en"><i class="" aria-hidden="true"></i></a></li>
+          <li>
+            <a href="https://www.facebook.com/"
+              ><i class="" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/?hl=en"
+              ><i class="" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.pinterest.com/"
+              ><i class="" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/?lang=en"
+              ><i class="" aria-hidden="true"></i
+            ></a>
+          </li>
         </ul>
       </div>
     </footer>

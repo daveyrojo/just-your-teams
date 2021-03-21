@@ -152,7 +152,6 @@ form .form-icons .fa {
 
 /* Choose team form */
 .translucent-form-overlay {
-  max-width: 500px;
   width: 100%;
   background-color: rgba(54, 54, 54, 0.8);
   padding: 20px;
