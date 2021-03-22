@@ -3,10 +3,28 @@ var resultsArea = document.querySelector("#pastResults");
 
 //const moment = require('moment');  
 var userName = document.querySelector("#username"); //?
+var aboutMe = document.querySelector("#about_me");
 //import {getSchedule,getResults} from "sportsapi.js";
 
-function getTeam(){//get team name from username
+const getTeam = async function() {//get team name from username
+    let browserUrl = document.location.href;
+    console.log(browserUrl);
+    let id = browserUrl.split('/')[browserUrl.split('/').length - 1];
+    console.log('ID: ' + id);
 
+    const response = await fetch('/api/user/' + id, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+    const userProfile = await response.json();
+
+    console.log('USER DATA BELOW');
+    console.log(userProfile);
+
+    userName.textContent = userProfile.username;
+    aboutMe.textContent = userProfile.about_me;
+    displayStuff(userProfile.team);
 }
 
  function displayStuff(name){
@@ -155,4 +173,5 @@ function getTeam(){//get team name from username
 
 }
 
-displayStuff("Chelsea FC")
+getTeam();
+// displayStuff("Chelsea FC")

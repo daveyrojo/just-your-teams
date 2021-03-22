@@ -26,7 +26,10 @@ const signupFormHandler = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/user");
+    const data = await response.json();
+    console.log('----DATA----');
+    console.log(data);
+    document.location.replace(`/user/${data.id}`);
   } else {
     alert("Failed to sign up");
   }

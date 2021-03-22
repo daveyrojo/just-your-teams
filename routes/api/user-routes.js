@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { route } = require('../html-routes');
 
 
 //URL: /api/user
@@ -28,7 +29,18 @@ router.post('/', async (req, res) => {
   }
 });
 
-
+router.put('/:id', async( req,res) => {
+  // URL: /api/user/:id
+  console.log('PUT: user/:id');
+  try {
+    const aboutme = await User.update({
+      about_me: req.body.about_me
+    });
+    res.status(200).json(aboutme);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //URL: /api/user/login
 router.post('/login', async (req, res) => {
   console.log("POST /api/user/login");
@@ -78,4 +90,22 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//GET ROUTES
+
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id
+      // where: {
+      //   id: req.params.id
+      // }
+    );
+    if (!userData) {
+      res.status(404).json({ message: 'No user found!'});
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 module.exports = router;

@@ -33,6 +33,8 @@ document
   .querySelector("#sign-up-form")
   .addEventListener("submit", sportTeamLeagueSelect);
 
+
+//update the about me
 const updateAboutMe = async function (event) {
   event.preventDefault();
   const aboutme = document.querySelector('#aboutme');
@@ -49,7 +51,7 @@ const updateAboutMe = async function (event) {
   console.log(aboutme.value);
 
   if (response.ok) {
-    document.location.replace("/user");
+    document.location.replace("/user/:id");
   } else {
     alert("Failed to update about me.");
   }
