@@ -32,10 +32,15 @@ router.post('/', async (req, res) => {
 router.put('/:id', async( req,res) => {
   // URL: /api/user/:id
   console.log('PUT: user/:id');
+  console.log("ABOUT ME VALUE:");
+  console.log(req.body.about_me);
   try {
-    const aboutme = await User.update({
-      about_me: req.body.about_me
+    const aboutme = await User.update(req.body, {
+      where: {
+        id: req.body.id
+      }
     });
+    
     res.status(200).json(aboutme);
   } catch (err) {
     res.status(500).json(err);
@@ -89,6 +94,10 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+//PUT ROUTES
+
+router.put
 
 //GET ROUTES
 

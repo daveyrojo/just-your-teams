@@ -39,19 +39,28 @@ const updateAboutMe = async function (event) {
   event.preventDefault();
   const aboutme = document.querySelector('#aboutme');
 
+  let browserUrl = document.location.href;
+  console.log(browserUrl);
+
+  let id = browserUrl.split("/")[browserUrl.split("/").length - 1];
+  console.log("ID: " + id);
+
   const response = await fetch(`/api/user/${id}`, {
     method: "PUT",
     body: JSON.stringify({
+      id: id,
       about_me: aboutme.value,
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   });
+
+  console.log('ABOUT ME VALUE BELOW');
   console.log(aboutme.value);
 
   if (response.ok) {
-    document.location.replace("/user/:id");
+    document.location.replace(`/user/${id}`);
   } else {
     alert("Failed to update about me.");
   }
