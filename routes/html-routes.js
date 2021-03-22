@@ -11,6 +11,11 @@ router.get("/user/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/userpage.html"));
 });
 
+router.get("/team-search/:id", (req, res) => {
+  console.log('GET /team-search/:id');
+  res.sendFile(path.join(__dirname, "../public/team-search.html"));
+});
+
 router.get("*", (req, res) => {
   console.log("GET rest *");
   res.sendFile(path.join(__dirname, "../public/landing.html"));

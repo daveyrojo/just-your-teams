@@ -13,14 +13,18 @@ const loginFormHandler = async function(event) {
     headers: { 'Content-Type': 'application/json' },
   });
 
-  console.log('Incoming Data');
-  console.log(JSON.stringify(response));
-  console.log('Above is line 15');gi
+  // console.log('Incoming Data');
+  // console.log(JSON.stringify(response));
+  // console.log('Above is line 15');
 
   // const id = await fetch('/api/user')
 
   if (response.ok) {
-    // document.location.replace(`/user/${response.id}`);
+    
+    const data = await response.json();
+    // console.log('----Look Below----')
+    // console.log(data.user.id);
+    document.location.replace(`/user/${data.user.id}`);
   } else {
     alert('Failed to login');
   }

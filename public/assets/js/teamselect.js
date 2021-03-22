@@ -51,7 +51,7 @@ const updateAboutMe = async function (event) {
   console.log(aboutme.value);
 
   if (response.ok) {
-    document.location.replace("/user");
+    document.location.replace("/user/:id");
   } else {
     alert("Failed to update about me.");
   }
