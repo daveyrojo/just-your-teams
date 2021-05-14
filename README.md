@@ -33,7 +33,7 @@ Much, much, more!
 
 # Screen Shots
 Landing Page:<br>
-![Landing Page](public/assets/img/jyt_landing_gif.gif)
+![Landing Page](public/assets/img/jyt_landing_gif.gif)<br>
 User Page:<br>
 ![User Page](public/assets/img/jyt_user_page.png)
 
