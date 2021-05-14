@@ -32,8 +32,8 @@ Save memorable results with a personalized write up
 Much, much, more!
 
 # Screen Shots
-![Landing Page](public/assets/img/landingpage.mp4)
+Landing Page:<br>
+![Landing Page](public/assets/img/jyt_landing_gif.gif)
+User Page:<br>
+![User Page](public/assets/img/jyt_user_page.png)
 
-<img src="public/assets/img/userpageimg.png" alt="drawing" width="550"/>
-
-<img src="public/assets/img/updateprofileimg.png" alt="drawing" width="550"/>
